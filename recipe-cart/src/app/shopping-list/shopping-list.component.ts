@@ -4,14 +4,18 @@ import { Ingredient } from '../shared/ingredient.model';
 @Component({
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
-  styleUrl: './shopping-list.component.css'
+  styleUrl: './shopping-list.component.css',
 })
 export class ShoppingListComponent {
-  ingredients:Ingredient[]=[
-    new Ingredient('Apples',5),
-    new Ingredient('Tometoes',10)
+  ingredients: Ingredient[] = [
+    new Ingredient('Apples', 5),
+    new Ingredient('Tometoes', 10),
   ];
-  constructor(){
+  constructor() {}
 
+  onIngredientAdded(ingredient: Ingredient) {
+    console.log('hello');
+    console.log(ingredient);
+    this.ingredients.push(ingredient);
   }
 }
